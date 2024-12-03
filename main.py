@@ -132,7 +132,7 @@ def one_to_two():
     page_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p1 = tk.Button(
-    master=page_1,
+    master=answers_labels_1,
     text="Next",
     command=one_to_two
 )
@@ -302,7 +302,7 @@ def two_to_three():
     page_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p2 = tk.Button(
-    master=page_2,
+    master=answers_labels_2,
     text="Next",
     command=two_to_three
 )
@@ -465,7 +465,7 @@ def three_to_four():
 
 
 Next_p3 = tk.Button(
-    master=page_3,
+    master=answers_labels_3,
     text="Next",
     command=three_to_four
 )
@@ -621,7 +621,7 @@ answers_labels_4 = tk.Frame(
 )
 
 def four_to_five():
-    page_4.forget()
+    page_4.destroy()
     page_5.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p4 = tk.Button(
