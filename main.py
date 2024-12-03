@@ -92,7 +92,7 @@ welcome = tk.Label(
     bg= "light grey"
 )
 def start_to_p1():
-    page_welcome.forget()
+    page_welcome.destroy()
     page_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 start = tk.Button(
     master=page_welcome,
@@ -128,7 +128,7 @@ answers_labels_1 = tk.Frame(
 )
 
 def one_to_two():
-    page_1.forget()
+    page_1.destroy()
     page_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p1 = tk.Button(
@@ -298,7 +298,7 @@ answers_labels_2 = tk.Frame(
     height=510,
 )
 def two_to_three():
-    page_2.forget()
+    page_2.destroy()
     page_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p2 = tk.Button(
@@ -460,7 +460,7 @@ answers_labels_3 = tk.Frame(
     height=510,
 )
 def three_to_four():
-    page_3.forget()
+    page_3.destroy()
     page_4.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 
@@ -621,14 +621,14 @@ answers_labels_4 = tk.Frame(
 )
 
 def four_to_five():
+    print("this button is working")
     page_4.destroy()
     page_5.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p4 = tk.Button(
     master=answers_labels_4,
     text="Next",
-    relief="raised",
-    command=four_to_five,
+    command= four_to_five,
 )
 
 Question_13 = tk.Label(                  #Measuring Openness
