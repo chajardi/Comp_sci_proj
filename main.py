@@ -136,33 +136,142 @@ Next_p1 = tk.Button(
     text="Next",
     command=one_to_two
 )
-p1_working = tk.Label(
+
+Question_1 = tk.Label(                  #Measuring Agreableness
     master=question_labels_1,
-    text= "is p1 working"
+    text= "How do you typically react to change?",
+    bg= "light grey"
+)
+q1_a1 = tk.Button(                      #Assigning a neutral value of 1 to this answer
+    master= answers_labels_1,
+    text= "I embrace it. New experiences are exciting!",
+    relief= "raised",
+    bg= "grey",
+    command= lambda: add_to_opn(a2_value)
+)
+q1_a2 = tk.Button(                      #Assigning a positive value of 0 to this answer
+    master=answers_labels_1,
+    text= "Change makes me nervous if I haven't planned for it.",
+    relief= "raised",
+    bg= "grey",
+    command=lambda: add_to_opn(a1_value)
+)
+
+q1_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+    master=answers_labels_1,
+    text= "It makes me uncomfortable. I like things to remain the same.",
+    relief= "raised",
+    bg= "grey",
+    command=lambda: add_to_opn(a3_value)
+)
+
+
+
+Question_2 = tk.Label(               #Measuring Agreableness
+    master=question_labels_1,
+    text= "How do you feel about planning ahead?",
+    bg= "light grey"
+)
+q2_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master=answers_labels_1,
+    text= "I prefer to be spontaneous",
+    relief= "raised",
+    bg= "grey",
+    command=lambda: add_to_agr(a1_value)
+)
+
+q2_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_1,
+    text= "Planning stress me out, but being surprised stresses me out more.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_agr(a2_value)
+)
+q2_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+    master=answers_labels_1,
+    text= "I need things structured and organized so I enjoy planning ahead.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_agr(a3_value)
+)
+
+Question_3 = tk.Label(                  #Measuring Neuroticism
+    master=question_labels_1,
+    text= "Do you enjoy socializing?",
+    bg= "light grey"
+)
+q3_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master=answers_labels_1,
+    text= "Being around others makes me feel energized.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_nrt(a1_value)
+)
+q3_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_1,
+    text= "I cherish the chance to exercise my empathy muscles.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_nrt(a2_value)
+)
+q3_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+    master=answers_labels_1,
+    text= "Socializing can be draining.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_nrt(a3_value)
+)
+
+Question_4 = tk.Label(                  #Measuring Consientiousness
+    master=question_labels_1,
+    text= "If you see someone in trouble, what would you do?",
+    bg= "light grey"
+)
+q4_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master=answers_labels_1,
+    text= "I'd do everything I could do to help",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a1_value)
+)
+q4_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_1,
+    text= "I may find it hard to stop what I'm doing",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a2_value)
+)
+q4_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+    master=answers_labels_1,
+    text= "I'd stay out of their business, it's not my problem.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a3_value)
+
 )
 
 question_labels_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 answers_labels_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-p1_working.pack()
-# Question_1.place(x= 0, y= 0)
-# q1_a1.place(x=00, y=0)
-# q1_a2.place(x=00, y=30)
-# q1_a3.place(x=00, y=60)
 
-# Question_2.place(x= 0, y= 120)
-# q2_a1.place(x=00, y=120)
-# q2_a2.place(x=00, y=150)
-# q2_a3.place(x=00, y=180)
+Question_1.place(x= 0, y= 0)
+q1_a1.place(x=00, y=0)
+q1_a2.place(x=00, y=30)
+q1_a3.place(x=00, y=60)
 
-# Question_3.place(x= 0, y= 240)
-# q3_a1.place(x=00, y=240)
-# q3_a2.place(x=00, y=270)
-# q3_a3.place(x=00, y=300)
+Question_2.place(x= 0, y= 120)
+q2_a1.place(x=00, y=120)
+q2_a2.place(x=00, y=150)
+q2_a3.place(x=00, y=180)
 
-# Question_4.place(x= 0, y= 360)
-# q4_a1.place(x=00, y=360)
-# q4_a2.place(x=00, y=390)
-# q4_a3.place(x=00, y=420)
+Question_3.place(x= 0, y= 240)
+q3_a1.place(x=00, y=240)
+q3_a2.place(x=00, y=270)
+q3_a3.place(x=00, y=300)
+
+Question_4.place(x= 0, y= 360)
+q4_a1.place(x=00, y=360)
+q4_a2.place(x=00, y=390)
+q4_a3.place(x=00, y=420)
 
 Next_p1.place(x=0, y= 480)
 
@@ -197,11 +306,77 @@ Next_p2 = tk.Button(
     text="Next",
     command=two_to_three
 )
-p2_working = tk.Label(
+
+Question_5 = tk.Label(                  
     master=question_labels_2,
-    text= "is page 2 working?"
+    text= "How often do you experience intense emotional changes",                
+    bg= "light grey"
+)
+q5_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master=answers_labels_2,
+    text= "My mood stays pretty consistent",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a1_value)
+)
+q5_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_2,
+    text= "I have emotional ups and downs all the time",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a2_value)
+)
+###q5_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+   ## master=answers_labels_4,
+    ####command=add_to_ctn(a3_value)
+
+
+Question_6 = tk.Label(                  #Measuring Agreableness
+    master=question_labels_2,
+    text= "A friend asks you to try something new with them. How do you respond?",
+    bg= "light grey")
+
+q6_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master=answers_labels_2,
+    text= "I'd do everything I could do to help",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a1_value)
+)
+q6_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_2,
+    text= "I may find it hard to stop what I'm doing",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a2_value)
+)
+q6_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+    master=answers_labels_2,
+    text= "I'd stay out of their business, it's not my problem.",
+    relief= "raised",
+    bg= "grey",
+    command=add_to_ctn(a3_value)
 )
 
+Question_7 = tk.Label(                  #Measuring Conscientiousness
+    master=question_labels_2,
+    text= "How are you with deadlines?",
+    bg= "light grey"
+)
+q7_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+    master= answers_labels_2,
+    text= "I get things done to make sure I never let anyone down.",
+    relief= "raised",
+    bg= "grey",
+    command= lambda: add_to_ctn(a1_value)
+)
+q7_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+    master=answers_labels_2,
+    text= "I structure my time well so that I never miss a deadline.",
+    relief= "raised",
+    bg= "grey",
+    command=lambda: add_to_ctn(a2_value)
+)
 q7_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "I usually procrastinate and get things done at the last minute or a bit late.",
@@ -239,27 +414,26 @@ q8_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 question_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 answers_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-p2_working.pack()
 
-# Question_5.place(x= 0, y= 0)
-# q5_a1.place(x=00, y=0)
-# q5_a2.place(x=00, y=30)
-# q5_a3.place(x=00, y=60)
+Question_5.place(x= 0, y= 0)
+q5_a1.place(x=00, y=0)
+q5_a2.place(x=00, y=30)
+#q5_a3.place(x=00, y=60)
 
-# Question_6.place(x= 0, y= 120)
-# q6_a1.place(x=00, y=120)
-# q6_a2.place(x=00, y=150)
-# q6_a3.place(x=00, y=180)
+Question_6.place(x= 0, y= 120)
+q6_a1.place(x=00, y=120)
+q6_a2.place(x=00, y=150)
+q6_a3.place(x=00, y=180)
 
-# Question_7.place(x= 0, y= 240)
-# q7_a1.place(x=00, y=240)
-# q7_a2.place(x=00, y=270)
-# q7_a3.place(x=00, y=300)
+Question_7.place(x= 0, y= 240)
+q7_a1.place(x=00, y=240)
+q7_a2.place(x=00, y=270)
+q7_a3.place(x=00, y=300)
 
-# Question_8.place(x= 0, y= 360)
-# q8_a1.place(x=00, y=360)
-# q8_a2.place(x=00, y=390)
-# q8_a3.place(x=00, y=420)
+Question_8.place(x= 0, y= 360)
+q8_a1.place(x=00, y=360)
+q8_a2.place(x=00, y=390)
+q8_a3.place(x=00, y=420)
 
 Next_p2.place(x=0, y= 480)
 
@@ -294,10 +468,6 @@ Next_p3 = tk.Button(
     master=page_3,
     text="Next",
     command=three_to_four
-)
-p3_working = tk.Label(
-    master=question_labels_3,
-    text= "this is working"
 )
 
 Question_9 = tk.Label(                  #Measuring openness
@@ -404,27 +574,26 @@ q12_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 question_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 answers_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-p3_working.pack()
 
-# Question_9.place(x= 0, y= 0)
-# q9_a1.place(x=00, y=0)
-# q9_a2.place(x=00, y=30)
-# q9_a3.place(x=00, y=60)
+Question_9.place(x= 0, y= 0)
+q9_a1.place(x=00, y=0)
+q9_a2.place(x=00, y=30)
+q9_a3.place(x=00, y=60)
 
-# Question_10.place(x= 0, y= 120)
-# q10_a1.place(x=00, y=120)
-# q10_a2.place(x=00, y=150)
-# q10_a3.place(x=00, y=180)
+Question_10.place(x= 0, y= 120)
+q10_a1.place(x=00, y=120)
+q10_a2.place(x=00, y=150)
+q10_a3.place(x=00, y=180)
 
-# Question_11.place(x= 0, y= 240)
-# q11_a1.place(x=00, y=240)
-# q11_a2.place(x=00, y=270)
-# q11_a3.place(x=00, y=300)
+Question_11.place(x= 0, y= 240)
+q11_a1.place(x=00, y=240)
+q11_a2.place(x=00, y=270)
+q11_a3.place(x=00, y=300)
 
-# Question_12.place(x= 0, y= 360)
-# q12_a1.place(x=00, y=360)
-# q12_a2.place(x=00, y=390)
-# q12_a3.place(x=00, y=420)
+Question_12.place(x= 0, y= 360)
+q12_a1.place(x=00, y=360)
+q12_a2.place(x=00, y=390)
+q12_a3.place(x=00, y=420)
 
 Next_p3.place(x=0, y= 480)
 
