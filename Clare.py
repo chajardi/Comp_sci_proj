@@ -88,19 +88,19 @@ answers_labels_1 = tk.Frame(
 
 Question_1 = tk.Label(                  #Measuring Agreableness
     master=question_labels_1,
-    text= "How do you typically react to change?",
+    text= "When a stranger talks to me, I consider it an opportunity to make a connection.?",
     bg= "light grey"
 )
 q1_a1 = tk.Button(                      #Assigning a neutral value of 1 to this answer
     master= answers_labels_1,
-    text= "I embrace it. New experiences are exciting!",
+    text= "Agree!",
     relief= "raised",
     bg= "grey",
     command= lambda: add_to_opn(a2_value)
 )
 q1_a2 = tk.Button(                      #Assigning a positive value of 0 to this answer
     master=answers_labels_1,
-    text= "Change makes me nervous if I haven't planned for it.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_opn(a1_value)
@@ -108,7 +108,7 @@ q1_a2 = tk.Button(                      #Assigning a positive value of 0 to this
 
 q1_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
-    text= "It makes me uncomfortable. I like things to remain the same.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_opn(a3_value)
@@ -116,14 +116,14 @@ q1_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 
 
-Question_2 = tk.Label(               #Measuring Agreableness
+Question_2 = tk.Label(               
     master=question_labels_1,
-    text= "How do you feel about planning ahead?",
+    text= " Being out with a big group of friends all night can be exhausting.",
     bg= "light grey"
 )
 q2_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_1,
-    text= "I prefer to be spontaneous",
+    text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_agr(a1_value)
@@ -131,14 +131,14 @@ q2_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
 
 q2_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
-    text= "Planning stress me out, but being surprised stresses me out more.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_agr(a2_value)
 )
 q2_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
-    text= "I need things structured and organized so I enjoy planning ahead.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_agr(a3_value)
@@ -146,26 +146,26 @@ q2_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_3 = tk.Label(                  #Measuring Neuroticism
     master=question_labels_1,
-    text= "Do you enjoy socializing?",
+    text= "I consider myself to be an assertive person.",
     bg= "light grey"
 )
 q3_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_1,
-    text= "Being around others makes me feel energized.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a1_value)
 )
 q3_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
-    text= "I cherish the chance to exercise my empathy muscles.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a2_value)
 )
 q3_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
-    text= "Socializing can be draining.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a3_value)
@@ -173,26 +173,26 @@ q3_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_4 = tk.Label(                  #Measuring Consientiousness
     master=question_labels_1,
-    text= "If you see someone in trouble, what would you do?",
+    text= "It’s not unusual for me to get lost in thought around other people.",
     bg= "light grey"
 )
-q4_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+q4_a1 = tk.Button(                      #Assigning a neutral value of 1 to this answer
     master=answers_labels_1,
-    text= "I'd do everything I could do to help",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a1_value)
 )
-q4_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q4_a2 = tk.Button(                      #Assigning a positive value of postive 0 to this answer
     master=answers_labels_1,
-    text= "I may find it hard to stop what I'm doing",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a2_value)
 )
-q4_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q4_a3 = tk.Button(                      #Assigning a negative value of +1 to this answer
     master=answers_labels_1,
-    text= "I'd stay out of their business, it's not my problem.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a3_value)
@@ -218,50 +218,53 @@ answers_labels_2 = tk.Frame(
 )
 Question_5 = tk.Label(                  
     master=question_labels_2,
-    text= "How often do you experience intense emotional changes",                
+    text= "I think that being on a reality show would be a nightmare.",                
     bg= "light grey"
 )
-q5_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+q5_a1 = tk.Button(                      #Assigning - 1 to this
     master=answers_labels_2,
-    text= "My mood stays pretty consistent",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a1_value)
 )
-q5_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q5_a2 = tk.Button(                      #Assigning a positive value of postive 0 to this answer
     master=answers_labels_2,
-    text= "I have emotional ups and downs all the time",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a2_value)
 )
-###q5_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-   ## master=answers_labels_4,
-    ####command=add_to_ctn(a3_value)
+q5_a3 = tk.Button(              #Assigning a negative value of +1 to this answer
+    master=answers_labels_2,
+    text= "Disagree",
+    relief= "raised",
+    bg= "grey",
+    command= add_to_ctn(a3_value)
+)
 
-
-Question_6 = tk.Label(                  #Measuring Agreableness
+Question_6 = tk.Label(                  
     master=question_labels_2,
-    text= "A friend asks you to try something new with them. How do you respond?",
+    text= "I don’t mind talking about anything, even if I’m not that knowledgeable about it.",
     bg= "light grey")
 
-q6_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
+q6_a1 = tk.Button(                      #Assigning value 1 to this answer
     master=answers_labels_2,
-    text= "I'd do everything I could do to help",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a1_value)
 )
-q6_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q6_a2 = tk.Button(                      #Assigning a 0 to this answer
     master=answers_labels_2,
-    text= "I may find it hard to stop what I'm doing",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a2_value)
 )
 q6_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
-    text= "I'd stay out of their business, it's not my problem.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a3_value)
