@@ -170,27 +170,27 @@ p2_working = tk.Label(
 
 Question_7 = tk.Label(                  #Measuring Conscientiousness
     master=question_labels_2,
-    text= "How are you with deadlines?",
+    text= "I'd rather spend one-on-one time with a close friend than get together with a friend group.",
     bg= "light grey"
 )
 q7_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master= answers_labels_2,
-    text= "I get things done to make sure I never let anyone down.",
+    text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command= lambda: add_to_ctn(a1_value)
 )
-q7_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q7_a2 = tk.Button(                      #Assigning a positive value of -1 to this answer
     master=answers_labels_2,
-    text= "I structure my time well so that I never miss a deadline.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_ctn(a2_value)
 )
 
-q7_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q7_a3 = tk.Button(                      #Assigning a negative value of 1 to this answer
     master=answers_labels_2,
-    text= "I usually procrastinate and get things done at the last minute or a bit late.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_ctn(a3_value)
@@ -198,26 +198,26 @@ q7_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_8 = tk.Label(                  #Measuring Extraversion
     master=question_labels_2,
-    text= "You are at a party. What are you likely doing?",
+    text= "It's better to have a roommate than to live alone.",
     bg= "light grey"
 )
 q8_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_2,
-    text= "Having a good time, but letting others steal the spotlight.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_ext(a1_value)
 )
 q8_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_2,
-    text= "Organizing a game for everyone to play.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ext(a2_value)
 )
 q8_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
-    text= "I'm hanging at the back of the room trying to observe without being noticed.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_ext(a3_value)
@@ -288,26 +288,26 @@ p3_working = tk.Label(
 
 Question_9 = tk.Label(                  #Measuring openness
     master=question_labels_3,
-    text= "Which type of game would you prefer to play?",
+    text= "It's disappointing to review my weekly schedule and see that it includes no social plans.",
     bg= "light grey"
 )
 q9_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_3,
-    text= "One where I work with a team to solve a problem together.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_opn(a1_value)
 )
 q9_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
-    text= "One that I've never played before.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_opn(a2_value)
 )
 q9_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
-    text= "One that i already know all the rules for.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_opn(a3_value)
@@ -315,26 +315,26 @@ q9_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_10 = tk.Label(                  #Measuring Neuroticism
     master=question_labels_3,
-    text= "How do you respond to stressful situations?",
+    text= "At work meetings I think it's important to speak up often.",
     bg= "light grey"
 )
 q10_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_3,
-    text= "By enlisting the help of others to get through it.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a1_value)
 )
 q10_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
-    text= "By feeling anxious until it passes.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a2_value)
 )
 q10_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
-    text= "I keep calm and take things as they come.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a3_value)
@@ -342,48 +342,48 @@ q10_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_11 = tk.Label(                  #Measuring Openness
     master=question_labels_3,
-    text= "How creative are you?",
+    text= "I have a lot of fun playing tricks on my friends and family.",
     bg= "light grey"
 )
 q11_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_3,
-    text= "I am creative in some aspects, but less creative in others.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey"
 )
 q11_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
-    text= "I have a great imagination, and I love exploring creative ideas.",
+    text= "Agree",
     relief= "raised",
     bg= "grey"
 )
 q11_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
-    text= "I tend to be more grounded in reality.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey"
 )
 
 Question_12 = tk.Label(                  #Measuring Conscientiousness
     master=question_labels_3,
-    text= "How would you describe your attention to detail?",
+    text= "I like to get my friends and co-workers excited about our plans.",
     bg= "light grey"
 )
 q12_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_3,
-    text= "Details are very important; I aim for precision in all things. ",
+    text= "Neutral",
     relief= "raised",
     bg= "grey"
 )
 q12_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
-    text= "I worry that I'm always missing something important.",
+    text= "Agree",
     relief= "raised",
     bg= "grey"
 )
 q12_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
-    text= "I prefer to focus more on the bigger picture.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey"
 )
