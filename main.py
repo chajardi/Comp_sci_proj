@@ -14,11 +14,11 @@ a2_value = 1
 a3_value = -1
 
 
-global total_ext_int_score
-total_ext_int_score = 0
+total_ext_int_score = []
+
 
 def add_to_total(value):
-    total_ext_int_score = total_ext_int_score+value
+    total_ext_int_score.append(value)
 
 ###################################################################################
 
@@ -132,14 +132,14 @@ q2_a2 = tk.Button(                      #Assigning a positive value of postive 1
     text= "Planning stress me out, but being surprised stresses me out more.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q2_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
     text= "I need things structured and organized so I enjoy planning ahead.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_3 = tk.Label(                  #Measuring Neuroticism
@@ -152,21 +152,21 @@ q3_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
     text= "Being around others makes me feel energized.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q3_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
     text= "I cherish the chance to exercise my empathy muscles.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q3_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
     text= "Socializing can be draining.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_4 = tk.Label(                  #Measuring Consientiousness
@@ -179,21 +179,21 @@ q4_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
     text= "I'd do everything I could do to help",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q4_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
     text= "I may find it hard to stop what I'm doing",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q4_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
     text= "I'd stay out of their business, it's not my problem.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 Question_5 = tk.Label(                  
     master=question_labels_1,
@@ -205,18 +205,18 @@ q5_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
     text= "My mood stays pretty consistent",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q5_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
     text= "I have emotional ups and downs all the time",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q5_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
    master=answers_labels_1,
-   command=add_to_total(a3_value)
+   command=lambda: add_to_total(a3_value)
 )
 
 Question_6 = tk.Label(                  #Measuring Agreableness
@@ -229,21 +229,21 @@ q6_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
     text= "I'd do everything I could do to help",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q6_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_1,
     text= "I may find it hard to stop what I'm doing",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q6_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_1,
     text= "I'd stay out of their business, it's not my problem.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 
@@ -358,14 +358,14 @@ q8_a2 = tk.Button(                      #Assigning a positive value of postive 1
     text= "Organizing a game for everyone to play.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q8_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "I'm hanging at the back of the room trying to observe without being noticed.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_9 = tk.Label(                  #Measuring openness
@@ -378,21 +378,21 @@ q9_a1 = tk.Button(                      #Assigning a neutral value of 0 to this 
     text= "One where I work with a team to solve a problem together.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q9_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_2,
     text= "One that I've never played before.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q9_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "One that i already know all the rules for.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_10 = tk.Label(                  #Measuring Neuroticism
@@ -405,21 +405,21 @@ q10_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "By enlisting the help of others to get through it.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q10_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_2,
     text= "By feeling anxious until it passes.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q10_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "I keep calm and take things as they come.",
     relief= "raised",
     bg= "grey",
-    command=add_to_total(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_11 = tk.Label(                  #Measuring Openness
@@ -431,19 +431,22 @@ q11_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     master=answers_labels_2,
     text= "I am creative in some aspects, but less creative in others.",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a2_value)
 )
 q11_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_2,
     text= "I have a great imagination, and I love exploring creative ideas.",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a1_value)
 )
 q11_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "I tend to be more grounded in reality.",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_12 = tk.Label(                  #Measuring Conscientiousness
@@ -455,55 +458,58 @@ q12_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     master=answers_labels_2,
     text= "Details are very important; I aim for precision in all things. ",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a2_value)
 )
 q12_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_2,
     text= "I worry that I'm always missing something important.",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a1_value)
 )
 q12_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
     text= "I prefer to focus more on the bigger picture.",
     relief= "raised",
-    bg= "grey"
+    bg= "grey",
+    command=lambda: add_to_total(a3_value)
 )
 
 question_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 answers_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
-Question_7.place(x= 0, y= 240)
-q7_a1.place(x=00, y=240)
-q7_a2.place(x=00, y=270)
-q7_a3.place(x=00, y=300)
+Question_7.place(x= 0, y= 0)
+q7_a1.place(x=00, y=0)
+q7_a2.place(x=00, y=30)
+q7_a3.place(x=00, y=60)
 
-Question_8.place(x= 0, y= 360)
-q8_a1.place(x=00, y=360)
-q8_a2.place(x=00, y=390)
-q8_a3.place(x=00, y=420)
+Question_8.place(x= 0, y= 120)
+q8_a1.place(x=00, y=120)
+q8_a2.place(x=00, y=150)
+q8_a3.place(x=00, y=180)
 
-Question_9.place(x= 0, y= 0)
-q9_a1.place(x=00, y=0)
-q9_a2.place(x=00, y=30)
-q9_a3.place(x=00, y=60)
+Question_9.place(x= 0, y= 240)
+q9_a1.place(x=00, y=240)
+q9_a2.place(x=00, y=270)
+q9_a3.place(x=00, y=300)
 
-Question_10.place(x= 0, y= 120)
-q10_a1.place(x=00, y=120)
-q10_a2.place(x=00, y=150)
-q10_a3.place(x=00, y=180)
+Question_10.place(x= 0, y= 360)
+q10_a1.place(x=00, y=360)
+q10_a2.place(x=00, y=390)
+q10_a3.place(x=00, y=420)
 
-Question_11.place(x= 0, y= 240)
-q11_a1.place(x=00, y=240)
-q11_a2.place(x=00, y=270)
-q11_a3.place(x=00, y=300)
+Question_11.place(x= 0, y= 480)
+q11_a1.place(x=00, y=480)
+q11_a2.place(x=00, y=510)
+q11_a3.place(x=00, y=540)
 
-Question_12.place(x= 0, y= 360)
-q12_a1.place(x=00, y=360)
-q12_a2.place(x=00, y=390)
-q12_a3.place(x=00, y=420)
+Question_12.place(x= 0, y= 600)
+q12_a1.place(x=00, y=600)
+q12_a2.place(x=00, y=630)
+q12_a3.place(x=00, y=660)
 
-Next_p2.place(x=0, y= 480)
+Next_p2.place(x=0, y= 720)
 
 ###################################################################################################################
 
@@ -548,14 +554,14 @@ q13_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "I don't find myself excited, but I am not scared to.",
     relief= "raised",
     bg= "grey",
-    command= lambda: add_to_opn(a1_value)
+    command= lambda: add_to_total(a1_value)
 )
 q13_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
     text= "I love to meet new people, and strike up conversation with them.",
     relief= "raised",
     bg= "grey",
-    command=lambda: add_to_opn(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 
 q13_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
@@ -563,7 +569,7 @@ q13_a3 = tk.Button(                      #Assigning a negative value of -1 to th
     text= "I get nervous and tend to avoid meeting new people.",
     relief= "raised",
     bg= "grey",
-    command=lambda: add_to_opn(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 
@@ -578,7 +584,7 @@ q14_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "I don't think I am particularly kind, but I don't think I am mean.",
     relief= "raised",
     bg= "grey",
-    command=lambda: add_to_agr(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 
 q14_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
@@ -586,14 +592,14 @@ q14_a2 = tk.Button(                      #Assigning a positive value of postive 
     text= "I try to always treat others with kindness and respect.",
     relief= "raised",
     bg= "grey",
-    command=add_to_agr(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q14_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
     text= "I am typically not sensitive of other peoples feelings.",
     relief= "raised",
     bg= "grey",
-    command=add_to_agr(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_15 = tk.Label(                  #Measuring Neuroticism
@@ -606,21 +612,21 @@ q15_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "I only find myself feeling sad or depressed when a situation warrants it.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q15_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
     text= "I dont find myself feeling sad or depressed.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q15_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
     text= "I frequently feel sad or depressed.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_16 = tk.Label(                  #Measuring Consientiousness
@@ -633,21 +639,21 @@ q16_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "Sometimes I plan things out, but I also trust my gut.",
     relief= "raised",
     bg= "grey",
-    command=add_to_ctn(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q16_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
     text= "I think about the consequences of one decision over another and choose the best one.",
     relief= "raised",
     bg= "grey",
-    command=add_to_ctn(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q16_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
     text= "I just trust my gut and go with what I feel..",
     relief= "raised",
     bg= "grey",
-    command=add_to_ctn(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_17 = tk.Label(                  #Measuring Neuroticism
@@ -660,21 +666,21 @@ q17_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "Yes, but sometimes I am better at managing it than other times.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q17_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
     text= "No, but even when I do feel stressed, I bounce back quickly.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q17_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
     text= "Yes, and once I'm stressed, it's hard for me to calm down.",
     relief= "raised",
     bg= "grey",
-    command=add_to_nrt(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 Question_18 = tk.Label(                  #Measuring Extraversion
@@ -687,21 +693,21 @@ q18_a1 = tk.Button(                      #Assigning a neutral value of 0 to this
     text= "It depends on how I am feeling, but occasionally I engage in small talk.",
     relief= "raised",
     bg= "grey",
-    command=add_to_ext(a1_value)
+    command=lambda: add_to_total(a1_value)
 )
 q18_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_3,
     text= "I consider myself a small talk expert.",
     relief= "raised",
     bg= "grey",
-    command=add_to_ext(a2_value)
+    command=lambda: add_to_total(a2_value)
 )
 q18_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_3,
     text= "Small talk makes me anxious, and I tend to avoid talking about myself.",
     relief= "raised",
     bg= "grey",
-    command=add_to_ext(a3_value)
+    command=lambda: add_to_total(a3_value)
 )
 
 question_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
@@ -727,17 +733,17 @@ q16_a1.place(x=00, y=360)
 q16_a2.place(x=00, y=390)
 q16_a3.place(x=00, y=420)
 
-Question_17.place(x= 0, y= 0)
-q17_a1.place(x=0, y=0)
-q17_a2.place(x=0, y=30)
-q17_a3.place(x=0, y=60)
+Question_17.place(x= 0, y= 480)
+q17_a1.place(x=00, y=480)
+q17_a2.place(x=00, y=510)
+q17_a3.place(x=00, y=540)
 
-Question_18.place(x= 0, y= 120)
-q18_a1.place(x=0, y=120)
-q18_a2.place(x=0, y=150)
-q18_a3.place(x=0, y=180)
+Question_18.place(x= 0, y= 600)
+q18_a1.place(x=00, y=600)
+q18_a2.place(x=00, y=630)
+q18_a3.place(x=00, y=660)
 
-Next_p3.place(x=0, y= 480)
+Next_p3.place(x=0, y= 720)
 
 #################################################################################################################
 
