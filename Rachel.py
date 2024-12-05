@@ -450,27 +450,27 @@ Next_p4 = tk.Button(
 
 Question_13 = tk.Label(                  #Measuring Openness
     master=question_labels_4,
-    text= "How do you react when meeting new people?",
+    text= "I don't like to feel pushed into dancing at parties",
     bg= "light grey"
 )
 q13_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master= answers_labels_4,
-    text= "I don't find myself excited, but I am not scared to.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command= lambda: add_to_opn(a1_value)
 )
-q13_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q13_a2 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_4,
-    text= "I love to meet new people, and strike up conversation with them.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_opn(a2_value)
 )
 
-q13_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q13_a3 = tk.Button(                      #Assigning a positive value of +1 to this answer
     master=answers_labels_4,
-    text= "I get nervous and tend to avoid meeting new people.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_opn(a3_value)
@@ -480,27 +480,27 @@ q13_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_14 = tk.Label(                  #Measuring Agreableness
     master=question_labels_4,
-    text= "How do you typically treat others?",
+    text= "When I'm in charge, I prefer meeting with people one-on-one to holding large brainstomring sessions.",
     bg= "light grey"
 )
 q14_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_4,
-    text= "I don't think I am particularly kind, but I don't think I am mean.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=lambda: add_to_agr(a1_value)
 )
 
-q14_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q14_a2 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_4,
-    text= "I try to always treat others with kindness and respect.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_agr(a2_value)
 )
-q14_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q14_a3 = tk.Button(                      #Assigning a positive value of +1 to this answer
     master=answers_labels_4,
-    text= "I am typically not sensitive of other peoples feelings.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_agr(a3_value)
@@ -508,26 +508,26 @@ q14_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_15 = tk.Label(                  #Measuring Neuroticism
     master=question_labels_4,
-    text= "How Often do you feel sad or depressed?",
+    text= "When I go to a party, I often think about how early it would be approproiate to leave.",
     bg= "light grey"
 )
 q15_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_4,
-    text= "I only find myself feeling sad or depressed when a situation warrants it.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a1_value)
 )
-q15_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q15_a2 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_4,
-    text= "I dont find myself feeling sad or depressed.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a2_value)
 )
-q15_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q15_a3 = tk.Button(                      #Assigning a positive value of +1 to this answer
     master=answers_labels_4,
-    text= "I frequently feel sad or depressed.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a3_value)
@@ -535,26 +535,26 @@ q15_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_16 = tk.Label(                  #Measuring Consientiousness
     master=question_labels_4,
-    text= "What's your process when making decisions?",
+    text= "If someone is interesting enough, I could happily spend an evening just listening to their stories.",
     bg= "light grey"
 )
 q16_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_4,
-    text= "Sometimes I plan things out, but I also trust my gut.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a1_value)
 )
 q16_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_4,
-    text= "I think about the consequences of one decision over another and choose the best one.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a2_value)
 )
 q16_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_4,
-    text= "I just trust my gut and go with what I feel..",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_ctn(a3_value)
@@ -613,26 +613,26 @@ def five_to_finish():
 
 Question_17 = tk.Label(                  #Measuring Neuroticism
     master=question_labels_5,
-    text= "Do you get stressed easily?",
+    text= "In work or in life, I'd rather take some time to consider the next steps even if others are eager to rush ahead.",
     bg= "light grey"
 )
 q17_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_5,
-    text= "Yes, but sometimes I am better at managing it than other times.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a1_value)
 )
-q17_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
+q17_a2 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_5,
-    text= "No, but even when I do feel stressed, I bounce back quickly.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a2_value)
 )
-q17_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
+q17_a3 = tk.Button(                      #Assigning a positive value of +1 to this answer
     master=answers_labels_5,
-    text= "Yes, and once I'm stressed, it's hard for me to calm down.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_nrt(a3_value)
@@ -640,78 +640,31 @@ q17_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_18 = tk.Label(                  #Measuring Extraversion
     master=question_labels_5,
-    text= "How do you feel about small talk?",
+    text= "As a kid, I was always the first to volunteer to read aloud.",
     bg= "light grey"
 )
 q18_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
     master=answers_labels_5,
-    text= "It depends on how I am feeling, but occasionally I engage in small talk.",
+    text= "Sometimes",
     relief= "raised",
     bg= "grey",
     command=add_to_ext(a1_value)
 )
 q18_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
     master=answers_labels_5,
-    text= "I consider myself a small talk expert.",
+    text= "Agree",
     relief= "raised",
     bg= "grey",
     command=add_to_ext(a2_value)
 )
 q18_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_5,
-    text= "Small talk makes me anxious, and I tend to avoid talking about myself.",
+    text= "Disagree",
     relief= "raised",
     bg= "grey",
     command=add_to_ext(a3_value)
 )
 
-Question_19 = tk.Label(                  #Measuring ???Not sure???
-    master=question_labels_5,
-    text= "Would your firends describe you as dependable?",
-    bg= "light grey"
-)
-q19_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
-    master=answers_labels_5,
-    text= "It depends on what we're doing, but generally yes.",
-    relief= "raised",
-    bg= "grey"
-)
-q19_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
-    master=answers_labels_5,
-    text= "Yes, I'm reliable and honor my commitments or plans.",
-    relief= "raised",
-    bg= "grey"
-)
-q19_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_5,
-    text= "Probably not. I tend to be kind of flaky.",
-    relief= "raised",
-    bg= "grey"
-)
-
-Question_20 = tk.Label(                  #Measuring ???Not sure???
-    master=question_labels_5,
-    text= "How do you feel about repetitive tasks?",
-    bg= "light grey"
-)
-q20_a1 = tk.Button(                      #Assigning a neutral value of 0 to this answer
-    master=answers_labels_5,
-    text= "Sometimes I need tasks like that to help me calm down.",
-    relief= "raised",
-    bg= "grey"
-)
-q20_a2 = tk.Button(                      #Assigning a positive value of postive 1 to this answer
-    master=answers_labels_5,
-    text= "I'm comfortable with repetitive tasks; routine is good.",
-    relief= "raised",
-    bg= "grey"
-)
-q20_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_5,
-    text= "I get bored easily and need variety whenever possible.",
-    relief= "raised",
-    bg= "grey"
-)
 Next_p5 = tk.Button(
     master=answers_labels_4,
     text="Next",
@@ -730,14 +683,6 @@ Question_18.place(x= 0, y= 120)
 q18_a1.place(x=0, y=120)
 q18_a2.place(x=0, y=150)
 q18_a3.place(x=0, y=180)
-Question_19.place(x= 0, y= 240)
-q19_a1.place(x=0, y=240)
-q19_a2.place(x=0, y=270)
-q19_a3.place(x=0, y=300)
-Question_20.place(x= 0, y= 360)
-q20_a1.place(x=0, y=360)
-q20_a2.place(x=0, y=390)
-q20_a3.place(x=0, y=420)
 
 Next_p5.place(x=0, y=480)
 
