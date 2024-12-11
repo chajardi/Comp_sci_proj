@@ -881,9 +881,16 @@ page_4 = tk.Frame(
     height=600, 
     bg="light grey"
 )
+def close():
+    window.destroy()
 
 def explanation():
     results.place_forget()
+    results.config(
+        text="finish",
+        command= lambda: close()
+    )
+    results.place(x= 480, y= 400)
     command = personality_type()
     demographics = tk.Label(
         bg = "light grey",
