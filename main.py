@@ -824,14 +824,14 @@ q18_a2 = tk.Button(                      #Assigning a value of 0 to this answer
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
-    command=lambda: pressed_button(q18_a1, zero_value)
+    command=lambda: pressed_button(q18_a2, zero_value)
 )
 q18_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
-    command=lambda: pressed_button(q18_a1, neg_one_value)
+    command=lambda: pressed_button(q18_a3, neg_one_value)
 )
 
 question_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
