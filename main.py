@@ -1,7 +1,7 @@
 import tkinter as tk
 
 window = tk.Tk()
-window.title("Personality Quiz")
+window.title("Intraversion/Extraversion Quiz")
 
 ##################################################################################
 
@@ -87,7 +87,7 @@ def get_demographics():
 
 page_welcome = tk.Frame(
     master=window, 
-    width=790, 
+    width=770, 
     height=600, 
     bg="light grey"
 )
@@ -96,7 +96,7 @@ page_welcome = tk.Frame(
 
 welcome = tk.Label(
     master=page_welcome,
-    text= "Welcome! \n Please fill out the information \nthen press the button below to begin your Personality Quiz Journey:",
+    text= "Welcome! \n Please fill out the information \nthen press the button below to begin your Intraversion/Extraversion Quiz Journey:",
     bg= "light grey",
     font=12
 )
@@ -152,7 +152,7 @@ age_label.place(x=300, y=220)
 age_entry.place(x=300, y=240)
 major_label.place(x=300, y=270)
 major_entry.place(x=300, y=300)
-welcome.place(x= 130, y= 50)
+welcome.place(x= 90, y= 50)
 
 start.place(x=340, y=350)
 
