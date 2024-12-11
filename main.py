@@ -28,6 +28,7 @@ def calculate_score():
     for x in total_ext_int_score:
         total = total+x
     print(total_ext_int_score)
+    print(total)
     return total
 
 def reverse_button(button,value):
@@ -76,7 +77,8 @@ class Person:
 
 def get_demographics():
     p1 = Person(fname_entry.get(), lname_entry.get(), age_entry.get(), major_entry.get())
-    #print(p1)
+    print(p1)
+    return p1
 
 
 ###################################################################################
@@ -512,7 +514,7 @@ q9_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_10 = tk.Label(          
     master=question_labels_2,
-    text= "A10. t work meetings I think it's important to speak up often.",
+    text= "10. At work meetings I think it's important to speak up often.",
     bg= "light grey",
     font = 12
 )
@@ -883,34 +885,37 @@ page_4 = tk.Frame(
 def explanation():
     results.place_forget()
     command = personality_type()
-    p1 = get_demographics()
     demographics = tk.Label(
         bg = "light grey",
         font=12,
-        text=p1
+        text=get_demographics()
     )
     exp_of_results = tk.Label(
+        master=page_4,
         bg="light grey",
         font=12
     )
     match command: 
         case "extreme introvert":
-            exp_of_results.config(text="You scored highly introverted. \nThis means that being around people drains your energy, you enjoy solitude, you have a small group of close friends,\n people might find it difficult to get to know you, too much stimulation leaves you feeling distracted, you are very self- aware, and you tend to be more independent. ")
+            exp_of_results.config(text="You scored highly introverted. \nThis means that being around people drains your energy, \nyou enjoy solitude, you have a small group of close friends, people might find it difficult to get to know you, \ntoo much stimulation leaves you feeling distracted, you are very self- aware, and you tend to be more independent. ")
             exp_of_results.place(x=40, y=270)
-            demographics.place(x=40, y= 200)
+            demographics.place(x=215, y= 200)
         case "a moderate introvert":
             exp_of_results.config("You scored moderately introverted. \nThis means that being around people can drain your energy, you prefer solitude to a crowd,\n you might have a smaller group of friends. You prefer to do things on your own. ")
             exp_of_results.place(x=40, y=270)
+            demographics.place(x=215, y= 200)
         case "I am an Ambivert":
             exp_of_results.config(text="You scored as ambient which is the range between an introvert and an extrovert. \nThis means that you’re a good listener and communicator, You have an ability to regulate behavior, \nYou feel comfortable in social settings, but also value your alone time, Empathy comes naturally to you, You’re able to provide balance")
             exp_of_results.place(x=40, y=270)
-            demographics.place(x=40, y= 200)
+            demographics.place(x=215, y= 200)
         case "moderate extrovert":
             exp_of_results.config(text="You scored as moderately extroverted. \nThis means that being around people can energize you, you prefer to solve problems through discussion, \noften described as friendly/approachable, usually enjoys conversing with people, tends to think out loud.")
             exp_of_results.place(x=40, y=270)
+            demographics.place(x=175, y= 200)
         case "an Extreme extrovert":
             exp_of_results.config(text="You scored as highly extroverted. \nThis means that being around people energizes you, people describe you as friendly and approachable, \nand highly enjoys conversing with others.")
             exp_of_results.place(x=40, y=270)
+            demographics.place(x=215, y= 200)
 
 results = tk.Button(
     master=page_4,
