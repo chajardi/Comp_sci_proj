@@ -64,6 +64,23 @@ def personality_type():
             #print("an Extreme extrovert")
             return "an Extreme extrovert"
             
+class Person:
+    def __init__(self,fname, lname, age, major):
+        self.fname = fname
+        self.lname = lname
+        self.age = age
+        self.major = major
+    
+    def __str__(self):
+        print(f"{self.fname} {self.lname}: \nAge: {self.age} \nMajor: {self.major}")
+
+# def get_demographics():
+#     fname = fname_entry.get()
+#     lname = lname_entry.get()
+#     age = str(age_entry.get())
+#     major = major_entry.get()
+#     p1 = Person(fname, lname, age, major)
+#     print(p1)     
 
 ###################################################################################
 
@@ -71,8 +88,8 @@ def personality_type():
 
 page_welcome = tk.Frame(
     master=window, 
-    width=750, 
-    height=750, 
+    width=790, 
+    height=600, 
     bg="light grey"
 )
 
@@ -80,22 +97,65 @@ page_welcome = tk.Frame(
 
 welcome = tk.Label(
     master=page_welcome,
-    text= "Welcome! \n Please press the button below to begin your Personality Quiz Journey:",
-    bg= "light grey"
+    text= "Welcome! \n Please fill out the information \nthen press the button below to begin your Personality Quiz Journey:",
+    bg= "light grey",
+    font=12
 )
 def start_to_p1():
     page_welcome.destroy()
     page_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
+
+fname_label = tk.Label(
+    text="First Name:",
+    bg="light grey",
+    font=8
+)
+fname_entry = tk.Entry(
+
+)
+lname_label = tk.Label(
+    text="Last Name:",
+    bg="light grey",
+    font=8
+)
+lname_entry = tk.Entry(
+
+)
+age_label = tk.Label(
+    text="Age:",
+    bg="light grey",
+    font=8
+)
+age_entry = tk.Entry(
+)
+
+major_label = tk.Label(
+    text="College Major:",
+    bg="light grey",
+    font=8
+)
+major_entry = tk.Entry(
+)
+
 start = tk.Button(
     master=page_welcome,
     text="Begin",
-    command=start_to_p1
+    command=lambda: (start_to_p1()) #get_demographics()
 )
 
 page_welcome.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-welcome.place(x= 200, y= 200)
-start.place(x=275, y=260)
+fname_label.place(x= 300, y= 120)
+fname_entry.place(x=300, y= 140)
+lname_label.place(x= 300, y=170)
+lname_entry.place(x=300, y=190)
+age_label.place(x=300, y=220)
+age_entry.place(x=300, y=240)
+major_label.place(x=300, y=270)
+major_entry.place(x=300, y=300)
+welcome.place(x= 130, y= 50)
+
+start.place(x=340, y=350)
 
 #####################################################################################
 
@@ -110,8 +170,8 @@ page_1 = tk.Frame(
 question_labels_1 = tk.Frame(
     master=page_1,
     bg="light grey",
-    width=500, 
-    height=750,
+    width=790, 
+    height=600,
 )
 answers_labels_1 = tk.Frame(
     master=page_1,
@@ -132,7 +192,7 @@ Next_p1 = tk.Button(
 
 Question_1 = tk.Label(                  
     master=question_labels_1,
-    text= "When a stranger talks to me, I consider it an opportunity to make a connection?",
+    text= "1. When a stranger talks to me, I consider it an opportunity to make a connection?",
     bg= "light grey",
     font = 12
 )
@@ -163,8 +223,9 @@ q1_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_2 = tk.Label(               
     master=question_labels_1,
-    text= "Being out with a big group of friends all night can be exhausting.",
-    bg= "light grey"
+    text= "2. Being out with a big group of friends all night can be exhausting.",
+    bg= "light grey",
+    font = 12
 )
 q2_a1 = tk.Button(                      #Assigning a value of -1 to this answer
     master=question_labels_1,
@@ -191,8 +252,9 @@ q2_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 
 Question_3 = tk.Label(                 
     master=question_labels_1,
-    text= "I consider myself to be an assertive person.",
-    bg= "light grey"
+    text= "3. I consider myself to be an assertive person.",
+    bg= "light grey",
+    font = 12
 )
 q3_a1 = tk.Button(                      #Assigning a value of 1 to this answer
     master=question_labels_1,
@@ -218,8 +280,9 @@ q3_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_4 = tk.Label(                 
     master=question_labels_1,
-    text= "It’s not unusual for me to get lost in thought around other people.",
-    bg= "light grey"
+    text= "4. It’s not unusual for me to get lost in thought around other people.",
+    bg= "light grey",
+    font = 12
 )
 q4_a1 = tk.Button(                      #Assigning a value of -1 to this answer
     master=question_labels_1,
@@ -244,8 +307,9 @@ q4_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 )
 Question_5 = tk.Label(                  
     master=question_labels_1,
-    text= "I think that being on a reality show would be a nightmare.",                
-    bg= "light grey"
+    text= "5. I think that being on a reality show would be a nightmare.",                
+    bg= "light grey",
+    font = 12
 )
 q5_a1 = tk.Button(                      #Assigning a value of -1 to this answer
     master=question_labels_1,
@@ -270,8 +334,10 @@ q5_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 
 Question_6 = tk.Label(                  
     master=question_labels_1,
-    text= "I don’t mind talking about anything, even if I’m not that knowledgeable about it.",
-    bg= "light grey")
+    text= "6. I don’t mind talking about anything, even if I’m not that knowledgeable about it.",
+    bg= "light grey",
+    font = 12
+    )
 
 q6_a1 = tk.Button(                      #Assigning a value of 1 to this answer
     master=question_labels_1,
@@ -344,8 +410,8 @@ page_2 = tk.Frame(
 question_labels_2 = tk.Frame(
     master=page_2,
     bg="light grey",
-    width=275, 
-    height=750,
+    width=790, 
+    height=600,
 )
 answers_labels_2 = tk.Frame(
     master=page_2,
@@ -358,32 +424,33 @@ def two_to_three():
     page_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p2 = tk.Button(
-    master=answers_labels_2,
+    master=question_labels_2,
     text="Next",
     command=two_to_three
 )
 
 Question_7 = tk.Label(                  
     master=question_labels_2,
-    text= "I'd rather spend one-on-one time with a close friend than get together with a friend group.",
-    bg= "light grey"
+    text= "7. I'd rather spend one-on-one time with a close friend than get together with a friend group.",
+    bg= "light grey",
+    font = 12
 )
 q7_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master= answers_labels_2,
+    master= question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command= lambda: pressed_button(q7_a1, neg_one_value)
 )
 q7_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q7_a2, zero_value)
 )
 q7_a3 = tk.Button(                      #Assigning a value to 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -392,25 +459,26 @@ q7_a3 = tk.Button(                      #Assigning a value to 1 to this answer
 
 Question_8 = tk.Label(                
     master=question_labels_2,
-    text= "It's better to have a roommate than to live alone.",
-    bg= "light grey"
+    text= "8. It's better to have a roommate than to live alone.",
+    bg= "light grey",
+    font = 12
 )
 q8_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q8_a1, one_value)
 )
 q8_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q8_a2, zero_value)
 )
 q8_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -419,25 +487,26 @@ q8_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_9 = tk.Label(                  
     master=question_labels_2,
-    text= "It's disappointing to review my weekly schedule and see that it includes no social plans.",
-    bg= "light grey"
+    text= "9. It's disappointing to review my weekly schedule and see that it includes no social plans.",
+    bg= "light grey",
+    font = 12
 )
 q9_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q9_a1, one_value)
 )
 q9_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q9_a2, zero_value)
 )
 q9_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -446,25 +515,26 @@ q9_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 Question_10 = tk.Label(          
     master=question_labels_2,
-    text= "At work meetings I think it's important to speak up often.",
-    bg= "light grey"
+    text= "A10. t work meetings I think it's important to speak up often.",
+    bg= "light grey",
+    font = 12
 )
 q10_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q10_a1, one_value)
 )
 q10_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q10_a2, zero_value)
 )
 q10_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -473,25 +543,26 @@ q10_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_11 = tk.Label(                
     master=question_labels_2,
-    text= "I have a lot of fun playing tricks on my friends and family.",
-    bg= "light grey"
+    text= "11. I have a lot of fun playing tricks on my friends and family.",
+    bg= "light grey",
+    font = 12
 )
 q11_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q11_a1, one_value)
 )
 q11_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q11_a2, zero_value)
 )
 q11_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -500,25 +571,26 @@ q11_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_12 = tk.Label(                 
     master=question_labels_2,
-    text= "I like to get my friends and co-workers excited about our plans.",
-    bg= "light grey"
+    text= "12. I like to get my friends and co-workers excited about our plans.",
+    bg= "light grey",
+    font = 12
 )
 q12_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q12_a1, one_value)
 )
 q12_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q12_a2,zero_value)
 )
 q12_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_2,
+    master=question_labels_2,
     text="Disagree.",
     relief= "raised",
     bg= "grey",
@@ -526,39 +598,39 @@ q12_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 )
 
 question_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-answers_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+#answers_labels_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Question_7.place(x= 0, y= 0)
-q7_a1.place(x=00, y=0)
-q7_a2.place(x=00, y=30)
-q7_a3.place(x=00, y=60)
+q7_a1.place(x=100, y=30)
+q7_a2.place(x=160, y=30)
+q7_a3.place(x=250, y=30)
 
-Question_8.place(x= 0, y= 120)
-q8_a1.place(x=00, y=120)
-q8_a2.place(x=00, y=150)
-q8_a3.place(x=00, y=180)
+Question_8.place(x= 0, y= 90)
+q8_a1.place(x=100, y=120)
+q8_a2.place(x=160, y=120)
+q8_a3.place(x=250, y=120)
 
-Question_9.place(x= 0, y= 240)
-q9_a1.place(x=00, y=240)
-q9_a2.place(x=00, y=270)
-q9_a3.place(x=00, y=300)
+Question_9.place(x= 0, y= 180)
+q9_a1.place(x=100, y=210)
+q9_a2.place(x=160, y=210)
+q9_a3.place(x=250, y=210)
 
-Question_10.place(x= 0, y= 360)
-q10_a1.place(x=00, y=360)
-q10_a2.place(x=00, y=390)
-q10_a3.place(x=00, y=420)
+Question_10.place(x= 0, y= 270)
+q10_a1.place(x=100, y=300)
+q10_a2.place(x=160, y=300)
+q10_a3.place(x=250, y=300)
 
-Question_11.place(x= 0, y= 480)
-q11_a1.place(x=00, y=480)
-q11_a2.place(x=00, y=510)
-q11_a3.place(x=00, y=540)
+Question_11.place(x= 0, y= 360)
+q11_a1.place(x=100, y=390)
+q11_a2.place(x=160, y=390)
+q11_a3.place(x=250, y=390)
 
-Question_12.place(x= 0, y= 600)
-q12_a1.place(x=00, y=600)
-q12_a2.place(x=00, y=630)
-q12_a3.place(x=00, y=660)
+Question_12.place(x= 0, y= 450)
+q12_a1.place(x=100, y=480)
+q12_a2.place(x=160, y=480)
+q12_a3.place(x=250, y=480)
 
-Next_p2.place(x=0, y= 720)
+Next_p2.place(x=160, y= 530)
 
 ###################################################################################################################
 
@@ -573,8 +645,8 @@ page_3 = tk.Frame(
 question_labels_3 = tk.Frame(
     master=page_3,
     bg="light grey",
-    width=275, 
-    height=750,
+    width=790, 
+    height=600,
 )
 answers_labels_3 = tk.Frame(
     master=page_3,
@@ -588,25 +660,26 @@ def three_to_four():
 
 
 Next_p3 = tk.Button(
-    master=answers_labels_3,
+    master=question_labels_3,
     text="Next",
     command= lambda: (three_to_four(), calculate_score(), personality_type())
 )
 
 Question_13 = tk.Label(                 
     master=question_labels_3,
-    text= "I don't like to feel pushed into dancing at parties.",
-    bg= "light grey"
+    text= "13. I don't like to feel pushed into dancing at parties.",
+    bg= "light grey",
+    font = 12
 )
 q13_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master= answers_labels_3,
+    master= question_labels_3,
     text= "Agree.",
     relief= "raised",
     bg= "grey",
     command= lambda: pressed_button(q13_a1, neg_one_value)
 )
 q13_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
@@ -614,7 +687,7 @@ q13_a2 = tk.Button(                      #Assigning a value of 0 to this answer
 )
 
 q13_a3 = tk.Button(   
-    master=answers_labels_3,                   #Assigning a value of 1 to this answer
+    master=question_labels_3,                   #Assigning a value of 1 to this answer
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -625,11 +698,12 @@ q13_a3 = tk.Button(
 
 Question_14 = tk.Label(                
     master=question_labels_3,
-    text= "When I'm in charge, I prefer meeting with people one-on-one to holding large brainstomring sessions.",
-    bg= "light grey"
+    text= "14. When I'm in charge, I prefer meeting with people one-on-one to holding large brainstomring sessions.",
+    bg= "light grey",
+    font = 12
 )
 q14_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Agree.",
     relief= "raised",
     bg= "grey",
@@ -637,14 +711,14 @@ q14_a1 = tk.Button(                      #Assigning a value of -1 to this answer
 )
 
 q14_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q14_a2, zero_value)
 )
 q14_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -653,25 +727,26 @@ q14_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 
 Question_15 = tk.Label(                 
     master=question_labels_3,
-    text= "When I go to a party, I often think about how early it would be approproiate to leave.",
-    bg= "light grey"
+    text= "15. When I go to a party, I often think about how early it would be approproiate to leave.",
+    bg= "light grey",
+    font = 12
 )
 q15_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Agree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q15_a1, neg_one_value)
 )
 q15_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q15_a2, zero_value)
 )
 q15_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -680,25 +755,26 @@ q15_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 
 Question_16 = tk.Label(                
     master=question_labels_3,
-    text= "If someone is interesting enough, I could happily spend an evening just listening to their stories.",
-    bg= "light grey"
+    text= "16. If someone is interesting enough, I could happily spend an evening just listening to their stories.",
+    bg= "light grey",
+    font = 12
 )
 q16_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Agree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q16_a1, one_value)
 )
 q16_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q16_a2, zero_value)
 )
 q16_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -707,25 +783,26 @@ q16_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 
 Question_17 = tk.Label(                 
     master=question_labels_3,
-    text= "In work or in life, I'd rather take some time to consider the next steps even if others are eager to rush ahead.",
-    bg= "light grey"
+    text= "17. In work or in life, I'd rather take some time to consider the next steps even if others are eager to rush ahead.",
+    bg= "light grey",
+    font = 12
 )
 q17_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Agree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q17_a1, neg_one_value)
 )
 q17_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q17_a2, zero_value)
 )
 q17_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -734,25 +811,26 @@ q17_a3 = tk.Button(                      #Assigning a value of 1 to this answer
 
 Question_18 = tk.Label(                 
     master=question_labels_3,
-    text= "As a kid, I was always the first to volunteer to read aloud.",
-    bg= "light grey"
+    text= "18. As a kid, I was always the first to volunteer to read aloud.",
+    bg= "light grey",
+    font = 12
 )
 q18_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Agree",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q18_a1, one_value)
 )
 q18_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q18_a1, zero_value)
 )
 q18_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_3,
+    master=question_labels_3,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -760,39 +838,39 @@ q18_a3 = tk.Button(                      #Assigning a negative value of -1 to th
 )
 
 question_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-answers_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+#answers_labels_3.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Question_13.place(x= 0, y= 0)
-q13_a1.place(x=00, y=0)
-q13_a2.place(x=00, y=30)
-q13_a3.place(x=00, y=60)
+q13_a1.place(x=100, y=30)
+q13_a2.place(x=160, y=30)
+q13_a3.place(x=250, y=30)
 
-Question_14.place(x= 0, y= 120)
-q14_a1.place(x=00, y=120)
-q14_a2.place(x=00, y=150)
-q14_a3.place(x=00, y=180)
+Question_14.place(x= 0, y= 90)
+q14_a1.place(x=100, y=120)
+q14_a2.place(x=160, y=120)
+q14_a3.place(x=250, y=120)
 
-Question_15.place(x= 0, y= 240)
-q15_a1.place(x=00, y=240)
-q15_a2.place(x=00, y=270)
-q15_a3.place(x=00, y=300)
+Question_15.place(x= 0, y= 180)
+q15_a1.place(x=100, y=210)
+q15_a2.place(x=160, y=210)
+q15_a3.place(x=250, y=210)
 
-Question_16.place(x= 0, y= 360)
-q16_a1.place(x=00, y=360)
-q16_a2.place(x=00, y=390)
-q16_a3.place(x=00, y=420)
+Question_16.place(x= 0, y= 270)
+q16_a1.place(x=100, y=300)
+q16_a2.place(x=160, y=300)
+q16_a3.place(x=250, y=300)
 
-Question_17.place(x= 0, y= 480)
-q17_a1.place(x=00, y=480)
-q17_a2.place(x=00, y=510)
-q17_a3.place(x=00, y=540)
+Question_17.place(x= 0, y= 360)
+q17_a1.place(x=100, y=390)
+q17_a2.place(x=160, y=390)
+q17_a3.place(x=250, y=390)
 
-Question_18.place(x= 0, y= 600)
-q18_a1.place(x=00, y=600)
-q18_a2.place(x=00, y=630)
-q18_a3.place(x=00, y=660)
+Question_18.place(x= 0, y= 450)
+q18_a1.place(x=100, y=480)
+q18_a2.place(x=160, y=480)
+q18_a3.place(x=250, y=480)
 
-Next_p3.place(x=0, y= 720)
+Next_p3.place(x=160, y= 530)
 
 #################################################################################################################
 
@@ -800,24 +878,31 @@ Next_p3.place(x=0, y= 720)
 
 page_4 = tk.Frame(
     master=window, 
-    width=750, 
-    height=475, 
+    width=1000, 
+    height=600, 
     bg="light grey"
 )
 
 def explanation():
+    results.place_forget()
     command = personality_type()
+    exp_of_results = tk.Label(
+        bg="light grey",
+        font=12
+    )
     match command: 
         case "extreme introvert":
-            print("I am an extreme introvert")
+            exp_of_results.config(text="You scored highly introverted. \nThis means that being around people drains your energy, you enjoy solitude, you have a small group of close friends,\n people might find it difficult to get to know you, too much stimulation leaves you feeling distracted, you are very self- aware, and you tend to be more independent. ")
+            exp_of_results.place(x=40, y=270)
         case "a moderate introvert":
-            print("I am a moderate introvert")
+            print("You scored moderately introverted. \nThis means that being around people can drain your energy, you prefer solitude to a crowd,\n you might have a smaller group of friends. You prefer to do things on your own. ")
         case "I am an Ambivert":
-            print("I am an Ambivert")
+            exp_of_results.config(text="You scored as ambient which is the range between an introvert and an extrovert. \nThis means that you’re a good listener and communicator, You have an ability to regulate behavior, \nYou feel comfortable in social settings, but also value your alone time, Empathy comes naturally to you, You’re able to provide balance")
+            exp_of_results.place(x=40, y=270)
         case "moderate extrovert":
-            print("I am a moderate extrovert")
+            print("You scored as moderately extroverted. \nThis means that being around people can energize you, you prefer to solve problems through discussion, \noften described as friendly/approachable, usually enjoys conversing with people, tends to think out loud.")
         case "an Extreme extrovert":
-            print("I am an extreme extrovert")
+            print("You scored as highly extroverted. \nThis means that being around people energizes you, people describe you as friendly and approachable, \nand highly enjoys conversing with others.")
         
 results = tk.Button(
     master=page_4,
@@ -825,6 +910,6 @@ results = tk.Button(
     command= lambda: explanation()
 )
 
-results.pack()
+results.place(x= 480, y=270)
 
 window.mainloop()
