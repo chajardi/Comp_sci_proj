@@ -28,7 +28,7 @@ def calculate_score():
     for x in total_ext_int_score:
         total = total+x
     print(total_ext_int_score)
-    print(total)
+    return total
 
 def reverse_button(button,value):
     subtract_from_total(value)
@@ -44,23 +44,23 @@ def pressed_button(button,value):
 
 def personality_type():
     while True:
-        if -18 <= total <= -12:
+        if -18 <= calculate_score() <= -12:
             #print("extreme introvert")
             return "extreme introvert"
             
-        elif -11 <= total <= -5:
+        elif -11 <= calculate_score() <= -5:
             #print("a moderate introvert")
             return "a moderate introvert"
             
-        elif -4 <= total <= 4:
+        elif -4 <= calculate_score() <= 4:
             #print("I am an Ambivert")
             return "I am an Ambivert"
             
-        elif 5 <= total <= 11:
+        elif 5 <= calculate_score() <= 11:
             #print("moderate extrovert")
             return "moderate extrovert"
             
-        elif 12 <= total <= 18:
+        elif 12 <= calculate_score() <= 18:
             #print("an Extreme extrovert")
             return "an Extreme extrovert"
             
@@ -72,15 +72,12 @@ class Person:
         self.major = major
     
     def __str__(self):
-        print(f"{self.fname} {self.lname}: \nAge: {self.age} \nMajor: {self.major}")
+        return f"{self.fname} {self.lname} \nAge: {self.age} \nMajor: {self.major}"
 
-# def get_demographics():
-#     fname = fname_entry.get()
-#     lname = lname_entry.get()
-#     age = str(age_entry.get())
-#     major = major_entry.get()
-#     p1 = Person(fname, lname, age, major)
-#     print(p1)     
+def get_demographics():
+    p1 = Person(fname_entry.get(), lname_entry.get(), age_entry.get(), major_entry.get())
+    #print(p1)
+
 
 ###################################################################################
 
@@ -141,7 +138,7 @@ major_entry = tk.Entry(
 start = tk.Button(
     master=page_welcome,
     text="Begin",
-    command=lambda: (start_to_p1()) #get_demographics()
+    command=lambda: (get_demographics(),start_to_p1()) 
 )
 
 page_welcome.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
@@ -886,6 +883,12 @@ page_4 = tk.Frame(
 def explanation():
     results.place_forget()
     command = personality_type()
+    p1 = get_demographics()
+    demographics = tk.Label(
+        bg = "light grey",
+        font=12,
+        text=p1
+    )
     exp_of_results = tk.Label(
         bg="light grey",
         font=12
@@ -894,16 +897,21 @@ def explanation():
         case "extreme introvert":
             exp_of_results.config(text="You scored highly introverted. \nThis means that being around people drains your energy, you enjoy solitude, you have a small group of close friends,\n people might find it difficult to get to know you, too much stimulation leaves you feeling distracted, you are very self- aware, and you tend to be more independent. ")
             exp_of_results.place(x=40, y=270)
+            demographics.place(x=40, y= 200)
         case "a moderate introvert":
-            print("You scored moderately introverted. \nThis means that being around people can drain your energy, you prefer solitude to a crowd,\n you might have a smaller group of friends. You prefer to do things on your own. ")
+            exp_of_results.config("You scored moderately introverted. \nThis means that being around people can drain your energy, you prefer solitude to a crowd,\n you might have a smaller group of friends. You prefer to do things on your own. ")
+            exp_of_results.place(x=40, y=270)
         case "I am an Ambivert":
             exp_of_results.config(text="You scored as ambient which is the range between an introvert and an extrovert. \nThis means that you’re a good listener and communicator, You have an ability to regulate behavior, \nYou feel comfortable in social settings, but also value your alone time, Empathy comes naturally to you, You’re able to provide balance")
             exp_of_results.place(x=40, y=270)
+            demographics.place(x=40, y= 200)
         case "moderate extrovert":
-            print("You scored as moderately extroverted. \nThis means that being around people can energize you, you prefer to solve problems through discussion, \noften described as friendly/approachable, usually enjoys conversing with people, tends to think out loud.")
+            exp_of_results.config(text="You scored as moderately extroverted. \nThis means that being around people can energize you, you prefer to solve problems through discussion, \noften described as friendly/approachable, usually enjoys conversing with people, tends to think out loud.")
+            exp_of_results.place(x=40, y=270)
         case "an Extreme extrovert":
-            print("You scored as highly extroverted. \nThis means that being around people energizes you, people describe you as friendly and approachable, \nand highly enjoys conversing with others.")
-        
+            exp_of_results.config(text="You scored as highly extroverted. \nThis means that being around people energizes you, people describe you as friendly and approachable, \nand highly enjoys conversing with others.")
+            exp_of_results.place(x=40, y=270)
+
 results = tk.Button(
     master=page_4,
     text= "Click for results",
