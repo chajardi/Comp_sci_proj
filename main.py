@@ -1,7 +1,7 @@
 import tkinter as tk
 
 window = tk.Tk()
-window.title("Window")
+window.title("Personality Quiz")
 
 ##################################################################################
 
