@@ -890,7 +890,6 @@ def explanation():
         text="finish",
         command= lambda: close()
     )
-    results.place(x= 480, y= 400)
     command = personality_type()
     demographics = tk.Label(
         bg = "light grey",
@@ -907,22 +906,27 @@ def explanation():
             exp_of_results.config(text="You scored highly introverted. \nThis means that being around people drains your energy, \nyou enjoy solitude, you have a small group of close friends, people might find it difficult to get to know you, \ntoo much stimulation leaves you feeling distracted, you are very self- aware, and you tend to be more independent. ")
             exp_of_results.place(x=40, y=270)
             demographics.place(x=215, y= 200)
+            results.place(x= 480, y= 400)
         case "a moderate introvert":
             exp_of_results.config("You scored moderately introverted. \nThis means that being around people can drain your energy, you prefer solitude to a crowd,\n you might have a smaller group of friends. You prefer to do things on your own. ")
             exp_of_results.place(x=40, y=270)
             demographics.place(x=215, y= 200)
+            results.place(x= 365, y= 400)
         case "I am an Ambivert":
             exp_of_results.config(text="You scored as ambient which is the range between an introvert and an extrovert. \nThis means that you’re a good listener and communicator, You have an ability to regulate behavior, \nYou feel comfortable in social settings, but also value your alone time, Empathy comes naturally to you, You’re able to provide balance")
             exp_of_results.place(x=40, y=270)
             demographics.place(x=215, y= 200)
+            results.place(x= 480, y= 400)
         case "moderate extrovert":
             exp_of_results.config(text="You scored as moderately extroverted. \nThis means that being around people can energize you, you prefer to solve problems through discussion, \noften described as friendly/approachable, usually enjoys conversing with people, tends to think out loud.")
             exp_of_results.place(x=40, y=270)
             demographics.place(x=175, y= 200)
+            results.place(x= 380, y= 400)
         case "an Extreme extrovert":
             exp_of_results.config(text="You scored as highly extroverted. \nThis means that being around people energizes you, people describe you as friendly and approachable, \nand highly enjoys conversing with others.")
             exp_of_results.place(x=40, y=270)
             demographics.place(x=215, y= 200)
+            results.place(x= 370, y= 400)
 
 results = tk.Button(
     master=page_4,
