@@ -15,6 +15,7 @@ neg_one_value = -1
 
 
 total_ext_int_score = []
+total = 0
 
 def add_to_total(value):
     total_ext_int_score.append(value)
@@ -40,6 +41,30 @@ def pressed_button(button,value):
     print(total_ext_int_score)
 
 
+
+def personality_type():
+    while True:
+        if -18 <= total <= -12:
+            #print("extreme introvert")
+            return "extreme introvert"
+            
+        elif -11 <= total <= -5:
+            #print("a moderate introvert")
+            return "a moderate introvert"
+            
+        elif -4 <= total <= 4:
+            #print("I am an Ambivert")
+            return "I am an Ambivert"
+            
+        elif 5 <= total <= 11:
+            #print("moderate extrovert")
+            return "moderate extrovert"
+            
+        elif 12 <= total <= 18:
+            #print("an Extreme extrovert")
+            return "an Extreme extrovert"
+            
+
 ###################################################################################
 
 #EVERYTHING TO DO WITH THE WELCOME PAGE
@@ -47,7 +72,7 @@ def pressed_button(button,value):
 page_welcome = tk.Frame(
     master=window, 
     width=750, 
-    height=475, 
+    height=750, 
     bg="light grey"
 )
 
@@ -61,6 +86,7 @@ welcome = tk.Label(
 def start_to_p1():
     page_welcome.destroy()
     page_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+
 start = tk.Button(
     master=page_welcome,
     text="Begin",
@@ -78,14 +104,14 @@ start.place(x=275, y=260)
 page_1 = tk.Frame(
     master=window, 
     width=750, 
-    height=475, 
+    height=750, 
     bg="light grey"
 )
 question_labels_1 = tk.Frame(
     master=page_1,
     bg="light grey",
-    width=275, 
-    height=475,
+    width=500, 
+    height=750,
 )
 answers_labels_1 = tk.Frame(
     master=page_1,
@@ -99,25 +125,26 @@ def one_to_two():
     page_2.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 Next_p1 = tk.Button(
-    master=answers_labels_1,
+    master=question_labels_1,
     text="Next",
     command=one_to_two
 )
 
-Question_1 = tk.Label(                  #Measuring Agreableness
+Question_1 = tk.Label(                  
     master=question_labels_1,
     text= "When a stranger talks to me, I consider it an opportunity to make a connection?",
-    bg= "light grey"
+    bg= "light grey",
+    font = 12
 )
 q1_a1 = tk.Button(                      #Assigning a neutral value of 1 to this answer
-    master= answers_labels_1,
+    master= question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command= lambda: pressed_button(q1_a1, one_value)
 )
 q1_a2 = tk.Button(                      #Assigning a positive value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
@@ -125,7 +152,7 @@ q1_a2 = tk.Button(                      #Assigning a positive value of 0 to this
 )
 
 q1_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -134,13 +161,13 @@ q1_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 
 
-Question_2 = tk.Label(               #Measuring Agreableness
+Question_2 = tk.Label(               
     master=question_labels_1,
     text= "Being out with a big group of friends all night can be exhausting.",
     bg= "light grey"
 )
 q2_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
@@ -148,68 +175,68 @@ q2_a1 = tk.Button(                      #Assigning a value of -1 to this answer
 )
 
 q2_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q2_a2, zero_value)
 )
 q2_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q2_a3, one_value)
 )
 
-Question_3 = tk.Label(                  #Measuring Neuroticism
+Question_3 = tk.Label(                 
     master=question_labels_1,
     text= "I consider myself to be an assertive person.",
     bg= "light grey"
 )
 q3_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q3_a1, one_value)
 )
 q3_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q3_a2, zero_value)
 )
 q3_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q3_a3, neg_one_value)
 )
 
-Question_4 = tk.Label(                  #Measuring Consientiousness
+Question_4 = tk.Label(                 
     master=question_labels_1,
     text= "It’s not unusual for me to get lost in thought around other people.",
     bg= "light grey"
 )
 q4_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q4_a1, neg_one_value)
 )
 q4_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q4_a2, zero_value)
 )
 q4_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -221,46 +248,47 @@ Question_5 = tk.Label(
     bg= "light grey"
 )
 q5_a1 = tk.Button(                      #Assigning a value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q5_a1, neg_one_value)
 )
 q5_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q5_a2, zero_value)
 )
 q5_a3 = tk.Button(                      #Assigning a value of 1 to this answer
-   master=answers_labels_1,
+   master=question_labels_1,
    text="Disagree.",
+   bg= "grey",
    command=lambda: pressed_button(q5_a3, one_value)
 )
 
-Question_6 = tk.Label(                  #Measuring Agreableness
+Question_6 = tk.Label(                  
     master=question_labels_1,
     text= "I don’t mind talking about anything, even if I’m not that knowledgeable about it.",
     bg= "light grey")
 
 q6_a1 = tk.Button(                      #Assigning a value of 1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Agree!",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q6_a1, one_value)
 )
 q6_a2 = tk.Button(                      #Assigning a value of 0 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Sometimes.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q6_a2, zero_value)
 )
 q6_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
-    master=answers_labels_1,
+    master=question_labels_1,
     text= "Disagree.",
     relief= "raised",
     bg= "grey",
@@ -269,39 +297,39 @@ q6_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
 
 
 question_labels_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
-answers_labels_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
+#answers_labels_1.pack(fill=tk.BOTH, side=tk.LEFT, expand=True,)
 
 Question_1.place(x= 0, y= 0)
-q1_a1.place(x=00, y=0)
-q1_a2.place(x=00, y=30)
-q1_a3.place(x=00, y=60)
+q1_a1.place(x=100, y=30)
+q1_a2.place(x=160, y=30)
+q1_a3.place(x=250, y=30)
 
-Question_2.place(x= 0, y= 120)
-q2_a1.place(x=00, y=120)
-q2_a2.place(x=00, y=150)
-q2_a3.place(x=00, y=180)
+Question_2.place(x= 0, y= 90)
+q2_a1.place(x=100, y=120)
+q2_a2.place(x=160, y=120)
+q2_a3.place(x=250, y=120)
 
-Question_3.place(x= 0, y= 240)
-q3_a1.place(x=00, y=240)
-q3_a2.place(x=00, y=270)
-q3_a3.place(x=00, y=300)
+Question_3.place(x= 0, y= 180)
+q3_a1.place(x=100, y=210)
+q3_a2.place(x=160, y=210)
+q3_a3.place(x=250, y=210)
 
-Question_4.place(x= 0, y= 360)
-q4_a1.place(x=00, y=360)
-q4_a2.place(x=00, y=390)
-q4_a3.place(x=00, y=420)
+Question_4.place(x= 0, y= 270)
+q4_a1.place(x=100, y=300)
+q4_a2.place(x=160, y=300)
+q4_a3.place(x=250, y=300)
 
-Question_5.place(x= 0, y= 480)
-q5_a1.place(x=00, y=480)
-q5_a2.place(x=00, y=510)
-q5_a3.place(x=00, y=540)
+Question_5.place(x= 0, y= 360)
+q5_a1.place(x=100, y=390)
+q5_a2.place(x=160, y=390)
+q5_a3.place(x=250, y=390)
 
-Question_6.place(x= 0, y= 600)
-q6_a1.place(x=00, y=600)
-q6_a2.place(x=00, y=630)
-q6_a3.place(x=00, y=660)
+Question_6.place(x= 0, y= 450)
+q6_a1.place(x=100, y=480)
+q6_a2.place(x=160, y=480)
+q6_a3.place(x=250, y=480)
 
-Next_p1.place(x=0, y= 720)
+Next_p1.place(x=160, y= 530)
 
 ##########################################################################################################
 
@@ -310,14 +338,14 @@ Next_p1.place(x=0, y= 720)
 page_2 = tk.Frame(
     master=window, 
     width=750, 
-    height=475, 
+    height=750, 
     bg="light grey"
 )
 question_labels_2 = tk.Frame(
     master=page_2,
     bg="light grey",
     width=275, 
-    height=475,
+    height=750,
 )
 answers_labels_2 = tk.Frame(
     master=page_2,
@@ -335,7 +363,7 @@ Next_p2 = tk.Button(
     command=two_to_three
 )
 
-Question_7 = tk.Label(                  #Measuring Conscientiousness
+Question_7 = tk.Label(                  
     master=question_labels_2,
     text= "I'd rather spend one-on-one time with a close friend than get together with a friend group.",
     bg= "light grey"
@@ -362,7 +390,7 @@ q7_a3 = tk.Button(                      #Assigning a value to 1 to this answer
     command=lambda: pressed_button(q7_a3, one_value)
 )
 
-Question_8 = tk.Label(                  #Measuring Extraversion
+Question_8 = tk.Label(                
     master=question_labels_2,
     text= "It's better to have a roommate than to live alone.",
     bg= "light grey"
@@ -383,13 +411,13 @@ q8_a2 = tk.Button(                      #Assigning a value of 0 to this answer
 )
 q8_a3 = tk.Button(                      #Assigning a negative value of -1 to this answer
     master=answers_labels_2,
-    text= "Sometimes.",
+    text= "Disagree.",
     relief= "raised",
     bg= "grey",
     command=lambda: pressed_button(q8_a3, neg_one_value)
 )
 
-Question_9 = tk.Label(                  #Measuring openness
+Question_9 = tk.Label(                  
     master=question_labels_2,
     text= "It's disappointing to review my weekly schedule and see that it includes no social plans.",
     bg= "light grey"
@@ -416,7 +444,7 @@ q9_a3 = tk.Button(                      #Assigning a negative value of -1 to thi
     command=lambda: pressed_button(q9_a3, neg_one_value)
 )
 
-Question_10 = tk.Label(                  #Measuring Neuroticism
+Question_10 = tk.Label(          
     master=question_labels_2,
     text= "At work meetings I think it's important to speak up often.",
     bg= "light grey"
@@ -443,7 +471,7 @@ q10_a3 = tk.Button(                      #Assigning a negative value of -1 to th
     command=lambda: pressed_button(q10_a3, neg_one_value)
 )
 
-Question_11 = tk.Label(                  #Measuring Openness
+Question_11 = tk.Label(                
     master=question_labels_2,
     text= "I have a lot of fun playing tricks on my friends and family.",
     bg= "light grey"
@@ -470,7 +498,7 @@ q11_a3 = tk.Button(                      #Assigning a negative value of -1 to th
     command=lambda: pressed_button(q11_a3, neg_one_value)
 )
 
-Question_12 = tk.Label(                  #Measuring Conscientiousness
+Question_12 = tk.Label(                 
     master=question_labels_2,
     text= "I like to get my friends and co-workers excited about our plans.",
     bg= "light grey"
@@ -539,14 +567,14 @@ Next_p2.place(x=0, y= 720)
 page_3 = tk.Frame(
     master=window, 
     width=750, 
-    height=475, 
+    height=750, 
     bg="light grey"
 )
 question_labels_3 = tk.Frame(
     master=page_3,
     bg="light grey",
     width=275, 
-    height=475,
+    height=750,
 )
 answers_labels_3 = tk.Frame(
     master=page_3,
@@ -562,10 +590,10 @@ def three_to_four():
 Next_p3 = tk.Button(
     master=answers_labels_3,
     text="Next",
-    command= lambda: (three_to_four(), calculate_score())
+    command= lambda: (three_to_four(), calculate_score(), personality_type())
 )
 
-Question_13 = tk.Label(                  #Measuring Openness
+Question_13 = tk.Label(                 
     master=question_labels_3,
     text= "I don't like to feel pushed into dancing at parties.",
     bg= "light grey"
@@ -595,7 +623,7 @@ q13_a3 = tk.Button(
 
 
 
-Question_14 = tk.Label(                  #Measuring Agreableness
+Question_14 = tk.Label(                
     master=question_labels_3,
     text= "When I'm in charge, I prefer meeting with people one-on-one to holding large brainstomring sessions.",
     bg= "light grey"
@@ -623,7 +651,7 @@ q14_a3 = tk.Button(                      #Assigning a value of 1 to this answer
     command=lambda: pressed_button(q14_a3, one_value)
 )
 
-Question_15 = tk.Label(                  #Measuring Neuroticism
+Question_15 = tk.Label(                 
     master=question_labels_3,
     text= "When I go to a party, I often think about how early it would be approproiate to leave.",
     bg= "light grey"
@@ -650,7 +678,7 @@ q15_a3 = tk.Button(                      #Assigning a value of 1 to this answer
     command=lambda: pressed_button(q15_a3, one_value)
 )
 
-Question_16 = tk.Label(                  #Measuring Consientiousness
+Question_16 = tk.Label(                
     master=question_labels_3,
     text= "If someone is interesting enough, I could happily spend an evening just listening to their stories.",
     bg= "light grey"
@@ -677,7 +705,7 @@ q16_a3 = tk.Button(                      #Assigning a negative value of -1 to th
     command=lambda: pressed_button(q16_a3, neg_one_value)
 )
 
-Question_17 = tk.Label(                  #Measuring Neuroticism
+Question_17 = tk.Label(                 
     master=question_labels_3,
     text= "In work or in life, I'd rather take some time to consider the next steps even if others are eager to rush ahead.",
     bg= "light grey"
@@ -704,7 +732,7 @@ q17_a3 = tk.Button(                      #Assigning a value of 1 to this answer
     command=lambda: pressed_button(q17_a3, one_value)
 )
 
-Question_18 = tk.Label(                  #Measuring Extraversion
+Question_18 = tk.Label(                 
     master=question_labels_3,
     text= "As a kid, I was always the first to volunteer to read aloud.",
     bg= "light grey"
@@ -776,5 +804,27 @@ page_4 = tk.Frame(
     height=475, 
     bg="light grey"
 )
+
+def explanation():
+    command = personality_type()
+    match command: 
+        case "extreme introvert":
+            print("I am an extreme introvert")
+        case "a moderate introvert":
+            print("I am a moderate introvert")
+        case "I am an Ambivert":
+            print("I am an Ambivert")
+        case "moderate extrovert":
+            print("I am a moderate extrovert")
+        case "an Extreme extrovert":
+            print("I am an extreme extrovert")
+        
+results = tk.Button(
+    master=page_4,
+    text= "Click for results",
+    command= lambda: explanation()
+)
+
+results.pack()
 
 window.mainloop()
